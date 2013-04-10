@@ -14,7 +14,7 @@ var conn = {};
 app.use(express.static(path.join(__dirname, 'www')));
 
 // start listening
-server.listen(80);
+server.listen(8008);
 
 // connection
 io.sockets.on('connection', function(socket) {

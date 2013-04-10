@@ -12,7 +12,7 @@
             var socket = undefined;
 
             $(document).ready(function(){
-                socket = io.connect('http://192.168.1.30');
+                socket = io.connect('http://dev.mindfuzz.net:8008');
 
                 socket.on('connect', function () {
                     // we're connected to the server

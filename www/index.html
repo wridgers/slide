@@ -67,7 +67,7 @@
             };
 
             // make qr code
-            document.getElementById('qr').innerHTML = create_qrcode('http://192.168.1.30/remote.html#'+uid);
+            document.getElementById('qr').innerHTML = create_qrcode('http://dev.mindfuzz.net:8008/remote.html#'+uid);
 
             // create presentation
             Reveal.initialize({
@@ -78,7 +78,7 @@
             });
 
             // connect to server
-            var socket = io.connect('http://localhost');
+            var socket = io.connect('http://dev.mindfuzz.net:8008');
 
             // identify with server
             socket.on('identify', function(data) {
