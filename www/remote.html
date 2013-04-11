@@ -2,43 +2,6 @@
 <html>
     <head>
         <title>Remote</title>
-
-        <script src="js/jquery.min.js"></script>
-        <script src="js/socket.io.min.js"></script>
-
-        <script>
-            var uid = window.location.hash.substring(1);
-
-            var socket = undefined;
-
-            $(document).ready(function(){
-                socket = io.connect('http://dev.mindfuzz.net:8008');
-
-                socket.on('connect', function () {
-                    // we're connected to the server
-                    socket.emit('identity', {
-                        type: 'remote',
-                        uid: uid
-                    });
-                });
-
-                socket.on('ready', function () {
-                    $('button').each(function(){
-                        $(this).prop('disabled', false);
-                    });
-                });
-            });
-
-            function right() { socket.emit('right'); }
-            function left() { socket.emit('left'); }
-            function up() { socket.emit('up'); }
-            function down() { socket.emit('down'); }
-            function next() { socket.emit('next'); }
-            function prev() { socket.emit('prev'); }
-            function overview() { socket.emit('overview'); }
-
-        </script>
-
         <style>
             button {
                 font-size: 20px;
@@ -76,5 +39,37 @@
         <button class="quarter" onclick=right();>Right</button>
 
         <button class="full" onclick=overview();>Overview</button>
+
+        <script src="js/socket.io.min.js"></script>
+        <script src="js/zepto.min.js"></script>
+
+        <script>
+            var uid = window.location.hash.substring(1);
+            var socket = io.connect('http://dev.mindfuzz.net:8008');
+
+            socket.on('connect', function () {
+                // we're connected to the server
+                socket.emit('identity', {
+                    type: 'remote',
+                    uid: uid
+                });
+            });
+
+            socket.on('ready', function () {
+                // alert that we are ready
+            });
+
+            function right() { socket.emit('right'); }
+            function left() { socket.emit('left'); }
+            function up() { socket.emit('up'); }
+            function down() { socket.emit('down'); }
+            function next() { socket.emit('next'); }
+            function prev() { socket.emit('prev'); }
+            function overview() { socket.emit('overview'); }
+
+            $(document).swipeRight(right);
+            $(document).swipeLeft(left);
+
+        </script>
     </body>
 </html>
