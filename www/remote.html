@@ -34,7 +34,7 @@
             function up() { socket.emit('up'); }
             function down() { socket.emit('down'); }
             function next() { socket.emit('next'); }
-            function previous() { socket.emit('previous'); }
+            function prev() { socket.emit('prev'); }
             function overview() { socket.emit('overview'); }
 
         </script>
@@ -67,8 +67,8 @@
     </head>
 
     <body>
+        <button class="half" onclick=prev();>Previous</button>
         <button class="half" onclick=next();>Next</button>
-        <button class="half" onclick=previous();>Previous</button>
 
         <button class="quarter" onclick=left();>Left</button>
         <button class="quarter" onclick=down();>Down</button>

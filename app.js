@@ -28,19 +28,14 @@ io.sockets.on('connection', function(socket) {
 
         if (data['type'] == 'viewer') {
             conn[uid]['viewer'] = socket;
-
-            console.log(conn);
         }
 
         if (data['type'] == 'remote') {
             conn[uid]['remote'] = socket;
-
-            console.log(conn);
         }
 
         if (conn[uid] != undefined) {
             if (conn[uid]['viewer'] != undefined && conn[uid]['remote'] != undefined) {
-                console.log('both connected!');
 
                 var viewer = conn[uid]['viewer'];
                 var remote = conn[uid]['remote'];
@@ -50,7 +45,7 @@ io.sockets.on('connection', function(socket) {
 
                 // now set up relays
                 remote.on('next', function() { viewer.emit('next'); });
-                remote.on('previous', function() { viewer.emit('previous'); });
+                remote.on('prev', function() { viewer.emit('prev'); });
                 remote.on('right', function() { viewer.emit('right'); });
                 remote.on('left', function() { viewer.emit('left'); });
                 remote.on('up', function() { viewer.emit('up'); });

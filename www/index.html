@@ -33,18 +33,44 @@
                     <h1>Second slide</h1>
                     <h3>Testing is important!</h3>
                     <p>
-                        Without some testing, this will never world.
+                        Without some testing, this will never work.
                     </p>
                 </section>
 
                 <section>
                     <h2>Important things...</h2>
+                    <h4>Try pressing down here!</h4>
                     <ul>
                         <li class="fragment">One thing.</li>
                         <li class="fragment">Another thing.</li>
                         <li class="fragment">The penultimate thing.</li>
                         <li class="fragment">The last thing?</li>
                     </ul>
+                </section>
+
+                <section>
+                    <h3>Things I am:</h3>
+
+                    <ul>
+                        <li class="fragment">A nerd</li>
+                        <li class="fragment">A party animal</li>
+                        <li class="fragment">A liar 1 out of 3 times</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <img src="https://dl.dropbox.com/u/27556763/titties.jpg" />
+                    <p>A nice pair.</p>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Thanks!</h1>
+                    </section>
+
+                    <section>
+                        <h1>Secret, yo.</h1>
+                    </section>
                 </section>
             </div>
         </div>
@@ -69,9 +95,13 @@
             // make qr code
             document.getElementById('qr').innerHTML = create_qrcode('http://dev.mindfuzz.net:8008/remote.html#'+uid);
 
+            // connected?
+            var connected = false;
+
             // create presentation
             Reveal.initialize({
-                controls: true,
+                controls: false,
+                keyboard: false,
                 progress: true,
                 history: true,
                 center: true
@@ -90,7 +120,10 @@
 
             // connected and ready
             socket.on('ready', function() {
-                Reveal.right();
+                if (!connected) {
+                    Reveal.right();
+                    connected = true;
+                }
             });
 
             // register moves
@@ -99,7 +132,7 @@
             socket.on('up', function() { Reveal.up(); });
             socket.on('down', function() { Reveal.down(); });
             socket.on('next', function() { Reveal.next(); });
-            socket.on('previous', function() { Reveal.previous(); });
+            socket.on('prev', function() { Reveal.prev(); });
             socket.on('overview', function() { Reveal.toggleOverview(); });
 
         </script>
