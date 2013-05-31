@@ -41,7 +41,6 @@
         <button class="full" onclick=overview();>Overview</button>
 
         <script src="js/socket.io.min.js"></script>
-        <script src="js/zepto.min.js"></script>
 
         <script>
             var uid = window.location.hash.substring(1);
@@ -66,9 +65,6 @@
             function next() { socket.emit('next'); }
             function prev() { socket.emit('prev'); }
             function overview() { socket.emit('overview'); }
-
-            $(document).swipeRight(right);
-            $(document).swipeLeft(left);
 
         </script>
     </body>

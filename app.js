@@ -19,7 +19,6 @@ server.listen(8008);
 // connection
 io.sockets.on('connection', function(socket) {
     socket.emit('identify');
-
     socket.on('identity', function(data) {
         var uid = data['uid'];
 
@@ -32,6 +31,12 @@ io.sockets.on('connection', function(socket) {
 
         if (data['type'] == 'remote') {
             conn[uid]['remote'] = socket;
+
+            // register remote disconnect
+            socket.on('disconnect', function() {
+                if (conn[uid]['viewer'] != undefined)
+                    conn[uid]['viewer'].emit('disconnected');
+            });
         }
 
         if (conn[uid] != undefined) {

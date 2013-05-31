@@ -14,17 +14,19 @@
             <div class="slides">
                 <section>
                     <h3>Scan QR code with your phone</h3>
+                    <p>I recommend QRDroid for Android.</p>
                     <div id="qr"></div>
                 </section>
 
                 <section>
                     <h1>Connected!</h1>
+                    <p>Wonderful! Now use the remote to control the presentation. :)</p>
                 </section>
 
                 <section>
                     <h1>Hello world!</h1>
                     <h3>Giving things a go.</h3>
-                    <p>
+                    <p class="fragment fade-in">
                         This will be pretty cool. :)
                     </p>
                 </section>
@@ -32,7 +34,7 @@
                 <section>
                     <h1>Second slide</h1>
                     <h3>Testing is important!</h3>
-                    <p>
+                    <p class="fragment fade-in">
                         Without some testing, this will never work.
                     </p>
                 </section>
@@ -41,10 +43,10 @@
                     <h2>Important things...</h2>
                     <h4>Try pressing down here!</h4>
                     <ul>
-                        <li class="fragment">One thing.</li>
-                        <li class="fragment">Another thing.</li>
-                        <li class="fragment">The penultimate thing.</li>
-                        <li class="fragment">The last thing?</li>
+                        <li class="fragment fade-in">One thing.</li>
+                        <li class="fragment fade-in">Another thing.</li>
+                        <li class="fragment fade-in">The penultimate thing.</li>
+                        <li class="fragment fade-in">The last thing?</li>
                     </ul>
                 </section>
 
@@ -52,15 +54,15 @@
                     <h3>Things I am:</h3>
 
                     <ul>
-                        <li class="fragment">A nerd</li>
-                        <li class="fragment">A party animal</li>
-                        <li class="fragment">A liar 1 out of 3 times</li>
+                        <li class="fragment fade-in">A nerd</li>
+                        <li class="fragment fade-in">A party animal</li>
+                        <li class="fragment fade-in">A liar 1 out of 3 times</li>
                     </ul>
                 </section>
 
                 <section>
-                    <img src="https://dl.dropbox.com/u/27556763/titties.jpg" />
-                    <p>A nice pair.</p>
+                    <img src="http://dev.mindfuzz.net:8008/img/birds.jpg" />
+                    <p>A nice pair of birds.</p>
                 </section>
 
                 <section>
@@ -126,6 +128,12 @@
                 }
             });
 
+            // lose connection
+            socket.on('disconnected', function() {
+                // lost the remote
+                alert('lost connection.');
+            });
+
             // register moves
             socket.on('right', function() { Reveal.right(); });
             socket.on('left', function() { Reveal.left(); });
@@ -134,6 +142,7 @@
             socket.on('next', function() { Reveal.next(); });
             socket.on('prev', function() { Reveal.prev(); });
             socket.on('overview', function() { Reveal.toggleOverview(); });
+
 
         </script>
     </body>
