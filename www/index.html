@@ -13,67 +13,164 @@
         <div class="reveal">
             <div class="slides">
                 <section>
-                    <h3>Scan QR code with your phone</h3>
-                    <p>I recommend QRDroid for Android.</p>
                     <div id="qr"></div>
+                    <h3>Scan QR code</h3>
                 </section>
 
                 <section>
                     <h1>Connected!</h1>
-                    <p>Wonderful! Now use the remote to control the presentation. :)</p>
                 </section>
 
                 <section>
-                    <h1>Hello world!</h1>
-                    <h3>Giving things a go.</h3>
-                    <p class="fragment fade-in">
-                        This will be pretty cool. :)
-                    </p>
+                    <h3>Applications of Pure Mathematics in Object Orientated Programming Languages</h3>
+                    <h4>Will Ridgers</h4>
                 </section>
 
                 <section>
-                    <h1>Second slide</h1>
-                    <h3>Testing is important!</h3>
-                    <p class="fragment fade-in">
-                        Without some testing, this will never work.
-                    </p>
+                    <h2>As Worlds Collide</h2>
                 </section>
 
                 <section>
-                    <h2>Important things...</h2>
-                    <h4>Try pressing down here!</h4>
+                    <h2>Mathematical Software</h2>
                     <ul>
-                        <li class="fragment fade-in">One thing.</li>
-                        <li class="fragment fade-in">Another thing.</li>
-                        <li class="fragment fade-in">The penultimate thing.</li>
-                        <li class="fragment fade-in">The last thing?</li>
+                        <li>Mathematica</li>
+                        <li>Maple</li>
+                        <li>MATLAB</li>
+                        <li>R</li>
+                        <li>GAP</li>
+                        <li>Magma</li>
                     </ul>
                 </section>
 
                 <section>
-                    <h3>Things I am:</h3>
+                    <h3>Some problems...</h3>
+                </section>
 
+                <section>
                     <ul>
-                        <li class="fragment fade-in">A nerd</li>
-                        <li class="fragment fade-in">A party animal</li>
-                        <li class="fragment fade-in">A liar 1 out of 3 times</li>
+                        <li class="fragment fadein">Their own ecosystems</li>
+                        <li class="fragment fadein">Many are closed source and proprietary</li>
+                        <li class="fragment fadein">Expensive, and non-free</li>
+                        <li class="fragment fadein">Custom scripting languages</li>
+                        <li class="fragment fadein">Restricted sharing and collaboration</li>
                     </ul>
                 </section>
 
                 <section>
-                    <img src="http://dev.mindfuzz.net:8008/img/birds.jpg" />
-                    <p>A nice pair of birds.</p>
+                    <p>
+                        We already have a large collection of free tools
+                        with well defined languages...
+                    </p>
+
+                    <p>
+                        Why can't we use these?
+                    </p>
                 </section>
 
                 <section>
-                    <section>
-                        <h1>Thanks!</h1>
-                    </section>
-
-                    <section>
-                        <h1>Secret, yo.</h1>
-                    </section>
+                    <h3>What is OOP?</h3>
+                    <ul>
+                        <li class="fragment fadein">a programming paradigm</li>
+                        <li class="fragment fadein">objects are structures with methods and attributes</li>
+                        <li class="fragment fadein">... sound familiar?</li>
+                    </ul>
                 </section>
+
+                <section>
+                    <pre>
+                        class Sphere {
+                            float   radius;
+
+                            float   volume();
+                            float   surfaceArea();
+                        };
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>OOP languages</h3>
+                    <ul>
+                        <li>C++</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>Ruby</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Java</h3>
+                    <ul>
+                        <li class="fragment fadein">Cross platform</li>
+                        <li class="fragment fadein">Bread and butter OOP</li>
+                        <li class="fragment fadein">Easy</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>
+                        OOP looks very similar to the algebra we use today,
+                        is there a way we can harness the power of OOP to
+                        build algebraic structures in code?
+                    </p>
+                </section>
+
+                <section>
+                    <ul>
+                        <li class="fragment fadein">share creations</li>
+                        <li class="fragment fadein">open source and portable</li>
+                        <li class="fragment fadein">use all our fancy tools</li>
+                        <li class="fragment fadein">computing power</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Something like this?</h3>
+                    <pre>
+                        class Group {
+                            // ?
+                        };
+
+                        class Ring {
+                            // ?
+                        };
+
+                        class Graph {
+                            // ?
+                        };
+                    </pre>
+                </section>
+
+                <section>
+                    <h3>Project Goals</h3>
+                    <p>To build a mathematical framework in Java</p>
+                    <ul>
+                        <li class="fragment fadein">open</li>
+                        <li class="fragment fadein">collaborative</li>
+                        <li class="fragment fadein">documented</li>
+                        <li class="fragment fadein">accessible</li>
+                        <li class="fragment fadein">concise</li>
+                        <li class="fragment fadein">verifiable</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>OOP Goals</h3>
+                    <ul>
+                        <li class="fragment fadein">Is OOP any good for this?</li>
+                        <li class="fragment fadein">Is Java any good for this?</li>
+                        <li class="fragment fadein">Can we improve Java or make OOP better?</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3></h3>
+                    <p>
+                    </p>
+                    <ul>
+                        <li class="fragment fadein"></li>
+                    </ul>
+                </section>
+
             </div>
         </div>
 
@@ -102,8 +199,8 @@
 
             // create presentation
             Reveal.initialize({
-                controls: false,
-                keyboard: false,
+                controls: true,
+                keyboard: true,
                 progress: true,
                 history: true,
                 center: true
