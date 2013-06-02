@@ -5,6 +5,6 @@ are able to control the presentation via your phone (or tablet). Simply scan
 the QR code and open the URL to connect.
 
 ## Setup
- - modify `index.html` to create your presentation
+ - modify `www/index.html` to create your presentation
  - install the dependencies with `npm install`
  - start the node server with `node app.js`
